@@ -27,31 +27,59 @@
   <script>
 
 
+
 $(document).ready(function() {
+
   var $wonGame = false;
   var $trackTurn = 0;
-  var $player = "X";
+  var $player = "x.jpg";
   var $board = [0,1,2,3,4,5,6,7,8];
-  var $winCases = [[0,1,2], [3,4,5], [6,7,8], [3,5,7], [1,5,9]]
+  var $winCases = [[0,1,2], [3,4,5], [6,7,8], [3,5,7], [1,5,9]];
 
-function playerTurnSwitch(){
-  trackTurn +=1
-  if(trackTurn % 2 == 0) {
-    $player = "X";
+function playerTurnSwitch() {
+  $trackTurn += 1;
+  if ($trackTurn % 2 == 0) {
+    $player = "x.jpg";
   }
   else {
-    $player "O";
+    $player = "o.jpg";
   }
-
-function winCase(){
-
 }
 
-$('.one').click(function(){
-  $(this).attr('src', 'xIcon.jpg');
-});
+function boardReplace () {
+  
+};
+
+function winCase(){
+  
+};
+
+  $('img').click(function(){
+    $(this).attr('src', $player);
+      $('img').each(function(){
+        console.log(this);
+
+      });
+    playerTurnSwitch();
+  });
+
+  // var $images = $(document).find('img');
+    
+      
+    
+  
 
 })
    </script>
  </body>
 </html>
+
+
+
+
+
+
+
+
+
+
