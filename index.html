@@ -36,7 +36,7 @@ $(document).ready(function() {
   var $wonGame = false;
   var $trackTurn = 0;
   var $mark = "X";
-  var $player = "file:///Users/zena/Desktop/zena_bitmakerlabs_tests/javascript/jscript_TicTacToe/x.jpg";
+  var $player = "http://cll.mcmaster.ca/SOTLdirectory/wp-content/uploads/2011/10/118484-matte-grey-square-icon-alphanumeric-letter-x.png";
   var $board = [0,1,2,3,4,5,6,7,8];
   var $winCases = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [2,4,6], [0,4,8]];
   var $tally = 0;
@@ -46,11 +46,11 @@ function playerTurnSwitch() {
   $trackTurn += 1;
   if ($trackTurn % 2 == 0) {
     $mark = "X";
-    $player = "file:///Users/zena/Desktop/zena_bitmakerlabs_tests/javascript/jscript_TicTacToe/x.jpg";
+    $player = "http://cll.mcmaster.ca/SOTLdirectory/wp-content/uploads/2011/10/118484-matte-grey-square-icon-alphanumeric-letter-x.png";
   }
   else {
     $mark = "O";
-    $player = "file:///Users/zena/Desktop/zena_bitmakerlabs_tests/javascript/jscript_TicTacToe/o.jpg";
+    $player = "http://cll.mcmaster.ca/SOTLdirectory/wp-content/uploads/2011/10/118466-matte-grey-square-icon-alphanumeric-letter-o.png";
   }
 }
 
@@ -75,10 +75,16 @@ function startUpEffect() {
           if(confirm("Player " + $mark + " WON!" + " Play again?")) {
             window.location.reload();
           }
-        
         }
+        
 
     });
+    if(($trackTurn >= 8) && ($tally == 3)){
+      if(confirm("Game is tied. :(" + " Play again?")) {
+        window.location.reload();
+      }
+    
+    }
     playerTurnSwitch();
   })
   startUpEffect();
