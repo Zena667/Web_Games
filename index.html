@@ -9,42 +9,47 @@
  <body>
   <table>
     <tr>
-      <td class = "one"></td>
-      <td class = "two"></td>
-      <td class = "three"></td>
+      <td><img class="one" src="" ></td>
+      <td><img class = "two" src="" ></td>
+      <td><img class = "three" src="" ></td>
     </tr>
     <tr>
-      <td class = "four"></td>
-      <td class = "five"></td>
-      <td class = "six"></td>
+      <td ><img class = "four" src="" ></td>
+      <td ><img class = "five" src="" ></td>
+      <td ><img class = "six" src="" ></td>
     </tr>
     <tr>
-      <td class = "seven"></td>
-      <td class = "eight"></td>
-      <td class = "nine"></td>
+      <td ><img class = "seven" src="" ></td>
+      <td ><img class = "eight" src="" ></td>
+      <td ><img class = "nine" src="" ></td>
     </tr>
   </table>
   <script>
 
 
 $(document).ready(function() {
-  var $wongGame = false;
+  var $wonGame = false;
   var $trackTurn = 0;
-  // var $playOneTurn = true;
-  var $playerOne = "X";
-  var $playerTwo = "X";
+  var $player = "X";
   var $board = [0,1,2,3,4,5,6,7,8];
   var $winCases = [[0,1,2], [3,4,5], [6,7,8], [3,5,7], [1,5,9]]
 
 function playerTurnSwitch(){
   trackTurn +=1
   if(trackTurn % 2 == 0) {
-    return $playerOne;
+    $player = "X";
   }
-  else
-    return $playerTwo;
+  else {
+    $player "O";
+  }
+
+function winCase(){
+
 }
 
+$('.one').click(function(){
+  $(this).attr('src', 'xIcon.jpg');
+});
 
 })
    </script>
