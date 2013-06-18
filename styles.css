@@ -1,0 +1,12 @@
+table {
+  /*position: absolute;*/
+  margin: 0 Auto;
+  margin-top: 150px;
+}
+
+td {
+  height: 200px;
+  width: 200px;
+  background-color: green;
+  border: 5px solid white;
+}
