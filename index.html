@@ -24,8 +24,29 @@
       <td class = "nine"></td>
     </tr>
   </table>
+  <script>
 
 
+$(document).ready(function() {
+  var $wongGame = false;
+  var $trackTurn = 0;
+  // var $playOneTurn = true;
+  var $playerOne = "X";
+  var $playerTwo = "X";
+  var $board = [0,1,2,3,4,5,6,7,8];
+  var $winCases = [[0,1,2], [3,4,5], [6,7,8], [3,5,7], [1,5,9]]
 
+function playerTurnSwitch(){
+  trackTurn +=1
+  if(trackTurn % 2 == 0) {
+    return $playerOne;
+  }
+  else
+    return $playerTwo;
+}
+
+
+})
+   </script>
  </body>
 </html>
