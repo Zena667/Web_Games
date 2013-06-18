@@ -4,24 +4,27 @@
   <title>TicTacToe</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Play:700' rel='stylesheet' type='text/css'>
   </head>
  
  <body>
+  <h1>TicTacToe</h1>
   <table>
     <tr>
-      <td><img class="one" src="" ></td>
-      <td><img class = "two" src="" ></td>
-      <td><img class = "three" src="" ></td>
+      <td><img class="one" src="green.png" ></td>
+      <td><img class = "two" src="green.png" ></td>
+      <td><img class = "three" src="green.png" ></td>
     </tr>
     <tr>
-      <td ><img class = "four" src="" ></td>
-      <td ><img class = "five" src="" ></td>
-      <td ><img class = "six" src="" ></td>
+      <td ><img class = "four" src="green.png" ></td>
+      <td ><img class = "five" src="green.png" ></td>
+      <td ><img class = "six" src="green.png" ></td>
     </tr>
     <tr>
-      <td ><img class = "seven" src="" ></td>
-      <td ><img class = "eight" src="" ></td>
-      <td ><img class = "nine" src="" ></td>
+      <td ><img class = "seven" src="green.png" ></td>
+      <td ><img class = "eight" src="green.png" ></td>
+      <td ><img class = "nine" src="green.png" ></td>
     </tr>
   </table>
   <script>
@@ -32,44 +35,54 @@ $(document).ready(function() {
 
   var $wonGame = false;
   var $trackTurn = 0;
-  var $player = "x.jpg";
+  var $mark = "X";
+  var $player = "file:///Users/zena/Desktop/zena_bitmakerlabs_tests/javascript/jscript_TicTacToe/x.jpg";
   var $board = [0,1,2,3,4,5,6,7,8];
-  var $winCases = [[0,1,2], [3,4,5], [6,7,8], [3,5,7], [1,5,9]];
+  var $winCases = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [2,4,6], [0,4,8]];
+  var $tally = 0;
+  var $imageArray = $(document).find('img');
 
 function playerTurnSwitch() {
   $trackTurn += 1;
   if ($trackTurn % 2 == 0) {
-    $player = "x.jpg";
+    $mark = "X";
+    $player = "file:///Users/zena/Desktop/zena_bitmakerlabs_tests/javascript/jscript_TicTacToe/x.jpg";
   }
   else {
-    $player = "o.jpg";
+    $mark = "O";
+    $player = "file:///Users/zena/Desktop/zena_bitmakerlabs_tests/javascript/jscript_TicTacToe/o.jpg";
   }
 }
 
-function boardReplace () {
-  
-};
-
-function winCase(){
-  
-};
+function startUpEffect() {
+  $('table').show('explode', 'slow', 1000, 'callback');
+}
 
   $('img').click(function(){
     $(this).attr('src', $player);
-      $('img').each(function(){
-        console.log(this);
 
-      });
+    $.each($winCases, function(index, win) {
+        $tally = 0;
+
+        $.each(win, function( indexMark, locMark) {
+          if($imageArray[locMark].src == $player) {
+            $tally += 1;
+
+          }
+        });
+          // console.log($tally);
+        if($tally == 3) {
+          if(confirm("Player " + $mark + " WON!" + " Play again?")) {
+            window.location.reload();
+          }
+        
+        }
+
+    });
     playerTurnSwitch();
-  });
-
-  // var $images = $(document).find('img');
-    
-      
-    
-  
-
-})
+  })
+  startUpEffect();
+ })
    </script>
  </body>
 </html>
