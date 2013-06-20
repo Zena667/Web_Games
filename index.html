@@ -12,19 +12,19 @@
   <h1>TicTacToe</h1>
   <table>
     <tr>
-      <td><img class="one" src="green.png" ></td>
-      <td><img class = "two" src="green.png" ></td>
-      <td><img class = "three" src="green.png" ></td>
+      <td><img class="one" src="http://i.imgur.com/py2Th5m.png" ></td>
+      <td><img class = "two" src="http://i.imgur.com/py2Th5m.png" ></td>
+      <td><img class = "three" src="http://i.imgur.com/py2Th5m.png" ></td>
     </tr>
     <tr>
-      <td ><img class = "four" src="green.png" ></td>
-      <td ><img class = "five" src="green.png" ></td>
-      <td ><img class = "six" src="green.png" ></td>
+      <td ><img class = "four" src="http://i.imgur.com/py2Th5m.png" ></td>
+      <td ><img class = "five" src="http://i.imgur.com/py2Th5m.png" ></td>
+      <td ><img class = "six" src="http://i.imgur.com/py2Th5m.png" ></td>
     </tr>
     <tr>
-      <td ><img class = "seven" src="green.png" ></td>
-      <td ><img class = "eight" src="green.png" ></td>
-      <td ><img class = "nine" src="green.png" ></td>
+      <td ><img class = "seven" src="http://i.imgur.com/py2Th5m.png" ></td>
+      <td ><img class = "eight" src="http://i.imgur.com/py2Th5m.png" ></td>
+      <td ><img class = "nine" src="http://i.imgur.com/py2Th5m.png" ></td>
     </tr>
   </table>
   <script>
@@ -58,7 +58,10 @@ function startUpEffect() {
 }
 
   $('img').click(function(){
-    $(this).attr('src', $player);
+    if($(this).attr('src') == "http://i.imgur.com/py2Th5m.png") 
+      $(this).attr('src', $player);
+    else
+      return;
 
     $.each($winCases, function(index, win) {
         $tally = 0;
